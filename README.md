@@ -34,6 +34,7 @@
 
 ### Association
 - belongs_to :user
+- belongs_to_active_hash :prefecture
 
 ## destinationsテーブル
 |Column|Type|Options|
@@ -48,7 +49,6 @@
 
 ### Association
 - belongs_to :user
-- belongs_to_active_hash :prefecture
 
 # cardsテーブル
 |Column|Type|Options|
