@@ -15,22 +15,21 @@
 
 ### Association
 - has_many :items, dependent: :destroy
+- has_many :oders, dependent: :destroy
 - has_one :destination dependent: :destroy
-- has_one :card dependent: :destroy
 
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_name|string|null: false|
-|item_image|string|null:false|
+|name|string|null: false|
 |description|text|null: false|
 |price|integer|null: false|
 |category|string|null:false|
 |condition|string|null: false|
 |delivery_charge|integer|null:false|
 |delivery_days|integer|null: false|
-|user_id|refarences|null:false, foreign_key:true|
-|prefecture_id|refarences|null: false, foreign_key:true|
+|user|refarences|null:false, foreign_key:true|
+|prefecture|refarences|null: false, foreign_key:true|
 
 ### Association
 - belongs_to :user
@@ -40,24 +39,21 @@
 |Column|Type|Options|
 |------|----|-------|
 |post_code|integer|null: false|
-|prefecture|string|null:false|
+|prefecture|integer|null:false|
 |city|string|null: false|
 |house_number|string|null: false|
 |building_name|string|
 |phone_number|integer|null: false|
-|user_id|refarences|null:false, foreign_key:true|
+|user|refarences|null:false, foreign_key:true|
 
 ### Association
 - belongs_to :user
 
-# cardsテーブル
+# odersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|card_number|integer|null: false, unique:true|
-|expiration_year|integer|null:false|
-|expiration_month|integer|null: false|
-|security_code|integer|null: false|
-|user_id|refarences|null:false, foreign_key:true|
+|user|refarences|null:false, foreign_key:true|
+|item|refarences|null:false, foreign_key:true|
 
 ### Association
 - belongs_to :user
