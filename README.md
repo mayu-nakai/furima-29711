@@ -1,6 +1,3 @@
-## ER図
-![er](furima-29711.png)
-
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -14,9 +11,8 @@
 |birthday|date|null: false|
 
 ### Association
-- has_many :items, dependent: :destroy
-- has_many :oders, dependent: :destroy
-- has_one :destination dependent: :destroy
+- has_many :items
+- has_many :oders
 
 ## itemsテーブル
 |Column|Type|Options|
@@ -29,25 +25,24 @@
 |delivery_charge|integer|null:false|
 |delivery_days|integer|null: false|
 |user|refarences|null:false, foreign_key:true|
-|prefecture|refarences|null: false, foreign_key:true|
 
 ### Association
 - belongs_to :user
-- belongs_to_active_hash :prefecture
+- has_one :order
 
 ## destinationsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|post_code|integer|null: false|
+|post_code|string|null: false|
 |prefecture|integer|null:false|
 |city|string|null: false|
 |house_number|string|null: false|
 |building_name|string|
-|phone_number|integer|null: false|
-|user|refarences|null:false, foreign_key:true|
+|phone_number|string|null: false|
+|oder|refarences|null:false, foreign_key:true|
 
 ### Association
-- belongs_to :user
+- belongs_to :oder
 
 # odersテーブル
 |Column|Type|Options|
@@ -57,3 +52,5 @@
 
 ### Association
 - belongs_to :user
+- belongs_to :item
+- has_one :destination
