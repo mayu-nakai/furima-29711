@@ -20,10 +20,11 @@
 |name|string|null: false|
 |description|text|null: false|
 |price|integer|null: false|
-|category|string|null:false|
+|category|integer|null:false|
 |condition|string|null: false|
-|delivery_charge|integer|null:false|
-|delivery_days|integer|null: false|
+|delivery_charge_id|integer|null:false|
+|delivery_day|integer|null: false|
+|prefecture_id|refarences|null: false, foreign_key:true|
 |user|refarences|null:false, foreign_key:true|
 
 ### Association
@@ -34,7 +35,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |post_code|string|null: false|
-|prefecture|integer|null:false|
+|prefecture_id|integer|null:false|
 |city|string|null: false|
 |house_number|string|null: false|
 |building_name|string|
