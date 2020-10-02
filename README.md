@@ -12,7 +12,7 @@
 
 ### Association
 - has_many :items
-- has_many :oders
+- has_many :orders
 
 ## itemsテーブル
 |Column|Type|Options|
@@ -20,10 +20,10 @@
 |name|string|null: false|
 |description|text|null: false|
 |price|integer|null: false|
-|category|integer|null:false|
-|condition|string|null: false|
+|category_id|integer|null:false|
+|condition_id|integer|null: false|
 |delivery_charge_id|integer|null:false|
-|delivery_day|integer|null: false|
+|delivery_day_id|integer|null: false|
 |prefecture_id|refarences|null: false, foreign_key:true|
 |user|refarences|null:false, foreign_key:true|
 
@@ -43,9 +43,9 @@
 |oder|refarences|null:false, foreign_key:true|
 
 ### Association
-- belongs_to :oder
+- belongs_to :order
 
-# odersテーブル
+# ordersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user|refarences|null:false, foreign_key:true|
