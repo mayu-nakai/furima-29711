@@ -24,7 +24,7 @@
 |condition_id|integer|null: false|
 |delivery_charge_id|integer|null:false|
 |delivery_day_id|integer|null: false|
-|prefecture_id|refarences|null: false, foreign_key:true|
+|prefecture_id|integer|null: false, foreign_key:true|
 |user|refarences|null:false, foreign_key:true|
 
 ### Association
