@@ -9,6 +9,8 @@ class OrderDestination
     validates :house_number
     validates :phone_number, format: { with: /\A\d{11}\z/ }
     validates :token
+    validates :user_id, presence: true
+    validates :item_id, presence: true
   end
 
   def save
