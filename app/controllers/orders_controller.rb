@@ -1,8 +1,11 @@
 class OrdersController < ApplicationController
   before_action :set_item, only: [:index, :create]
   def index
-    if @item.order.present? || current_user.id == @item.user_id
+    if current_user == @item.user || @item.order.present?
       redirect_to root_path
+    elsif user_signed_in?
+    else
+      redirect_to new_user_session_path
     end
     @order = Order.new
   end
